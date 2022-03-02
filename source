@@ -143,5 +143,3 @@ local PlayerSection = Tab:NewSection("Player Customization")
 
  LogsSection:NewLabel("Online: Right Now")
  LogsSection:NewLabel("Last Online: 2/28/2022")
-
-                                                                                                                                                                                                                                                                                                                    print("wow the owner of bakerhub is here ;)")
