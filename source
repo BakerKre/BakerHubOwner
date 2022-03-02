@@ -1,0 +1,147 @@
+ocal Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+ local Window = Library.CreateLib("Baker Hub (Owner Version)", "Ocean")
+
+ -- Help Section
+ local Tab = Window:NewTab("Information")
+ local InfoSection = Tab:NewSection("🔽 Information 🔽")
+
+
+ InfoSection:NewLabel("Welcome SCRIBTEA to your version of Baker Hub!") -- Delete the Developer Welcome Message once you are finished!
+ InfoSection:NewLabel("Creator: SCRIBTEA / ScribberTea_#4879")
+ InfoSection:NewLabel("Discord User: ScribberTea_#4879")
+ InfoSection:NewLabel("Need help? dm ScribberTea_#4879!")
+ InfoSection:NewLabel("▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬")
+ InfoSection:NewLabel("Version 0.0.10 (WIP)")
+
+-- Rules
+-- MAIN
+ local Tab = Window:NewTab("Terms Of Service")
+ local RulesSection = Tab:NewSection("🔽 Terms Of Service 🔽")
+
+ RulesSection:NewLabel("1. DO NOT USE FOR HARMFUL PURPOSES")
+ RulesSection:NewLabel("2. DO NOT FALSE REPORTS")
+ RulesSection:NewLabel("3. DO NOT SPAM THE COMMUNICATION SERVER")
+ RulesSection:NewLabel("4. DO NOT TRY BYPASSING A BAN FROM US")
+ RulesSection:NewLabel("5. DO NOT PING STAFF WITHOUT ANY REASON")
+ RulesSection:NewLabel("6. DO NOT INTERFEAR WITH THE OWNER'S LIFE")
+ RulesSection:NewLabel("6. DO NOT REMAKE OUR SCRIPT")
+ RulesSection:NewLabel("🔽 Punishments 🔽")
+ RulesSection:NewLabel("you dont have to follow these owner sir")
+
+-- MAIN HUB
+
+-- MAIN
+ local Tab = Window:NewTab("Main")
+ local MainHubSection = Tab:NewSection("Player Customization")
+
+ MainHubSection:NewSlider("Walkspeed", "Changes the walkspeed", 500, 16, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+    end)
+ 
+ MainHubSection:NewSlider("Jumppower", "Changes the jumppower", 500, 50, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+    end)
+
+ MainHubSection:NewLabel("Important")
+
+ MainHubSection:NewButton("Script Check", "Check if the script is working. (CLICK F9 TO PULL OUT THE CONSOLE)", function()
+        print("Your Script works!")
+    end)
+    
+ MainHubSection:NewLabel("Fun")
+
+ MainHubSection:NewButton("Fly", "(WIP | WORK IN PROGRESS) Let's you fly in R6 Games.", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/mJZhYiFq"))();
+    end)
+
+
+ -- MAIN
+ local Tab = Window:NewTab("Prison Life")
+ local MainSection = Tab:NewSection("Give Guns")
+ 
+     MainSection:NewDropdown("Give Gun", "Gives the localplayer a gun", {"M9", "Remington 870", "AK-47"}, function(v)
+        local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver[v].ITEMPICKUP
+        local Event = game:GetService("Workspace").Remote.ItemHandler
+        Event:InvokeServer(A_1)
+    end)
+ 
+    MainSection:NewDropdown("Gun Mod", "Makes the gun op", {"M9", "Remington 870", "AK-47"}, function(v)
+        local module = nil
+        if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(v) then
+            module = require(game:GetService("Players").LocalPlayer.Backpack[v].GunStates)
+        elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild(v) then
+            module = require(game:GetService("Players").LocalPlayer.Character[v].GunStates)
+        end
+        if module ~= nil then
+            module["MaxAmmo"] = math.huge
+            module["CurrentAmmo"] = math.huge
+            module["StoredAmmo"] = math.huge
+            module["FireRate"] = 0.000001
+            module["Spread"] = 0
+            module["Range"] = math.huge
+            module["Bullets"] = 10
+            module["ReloadTime"] = 0.000001
+            module["AutoFire"] = true
+        end
+    end)
+
+
+-- PLAYER
+local PlayerSection = Tab:NewSection("Player Customization")
+ 
+ PlayerSection:NewSlider("Walkspeed", "Changes the walkspeed", 500, 16, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+    end)
+ 
+    PlayerSection:NewSlider("Jumppower", "Changes the jumppower", 500, 50, function(v)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
+    end)
+
+-- SCRIPTS
+-- MAIN
+
+ local Tab = Window:NewTab("Scripts")
+ local ScriptsSection = Tab:NewSection("Other Scripts")
+
+ ScriptsSection:NewButton("Tiger Admin", "Loads Tiger Admin.", function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/h17s3/TIGERADMIN/main/TIGERADMINSCRIPTFREE'),true))()
+    end)
+
+ ScriptsSection:NewLabel("Admin Scripts")
+
+ ScriptsSection:NewButton("Infinite Yield", "Loads Infinite Yield.", function()
+        loadstring(game:HttpGet(('https://pastebin.com/raw/tzTXmYf2'),true))()
+    end)
+
+ ScriptsSection:NewLabel("FPS Scripts")
+
+ ScriptsSection:NewButton("Dark Hub", "Loads Dark Hub.", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init", true))()
+    end)
+
+ ScriptsSection:NewButton("Owl Hub", "Loads Owl Hub.", function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ZinityDrops/OwlHubLink/master/OwlHubBack.lua"))();
+    end)
+
+
+-- Updates
+-- MAIN
+ local Tab = Window:NewTab("News")
+ local UpdateSection = Tab:NewSection("🔽 Announcements 🔽")
+
+ UpdateSection:NewLabel("WeAreDevs API is compatible with this script now.")
+ UpdateSection:NewLabel("Added 1 New features!")
+ UpdateSection:NewLabel("This script works with DGear to CGear V3")
+ UpdateSection:NewLabel("Released Baker Hub!")
+ UpdateSection:NewLabel("Update jumppower")
+ UpdateSection:NewLabel("Updated walkspeed")
+
+-- Activity logs
+-- MAIN
+ local Tab = Window:NewTab("Activity Logs")
+ local LogsSection = Tab:NewSection("🔽 Owner Logs 🔽")
+
+ LogsSection:NewLabel("Online: Right Now")
+ LogsSection:NewLabel("Last Online: 2/28/2022")
+
+                                                                                                                                                                                                                                                                                                                    print("wow the owner of bakerhub is here ;)")
